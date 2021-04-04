@@ -1,1 +1,35 @@
-Welcome to Yong's personal website
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zhang Yong</title>
+        <link rel="shortcut icon" href="public/favicon_new.ico">
+    </head>
+    <body>
+    <div id="develop"></div>
+    <!-- This is used for React-->
+    <div id="like_button_container"></div>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        const data = ["Personal Information", "Research Interest", "Projects"]
+        const VDOM = (
+           <div>
+               <h1>This is Yong's personal website based on React</h1>
+               <ul>{
+                   data.map((item, index) => {
+                       return <li key={index}>{item}</li>
+                   })
+               }
+               </ul>
+           </div>
+        )
+        ReactDOM.render(VDOM, document.getElementById("develop"))
+    </script>
+
+    </body>
+</html>
